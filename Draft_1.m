@@ -68,30 +68,41 @@ if count ~=1
                 imshow(stasis)
                 count = 1;
             end
-        else                                     
-                subplot(141)
-                imshow(stasis)
-                title('AA')
+        else
+            figure(2)
+            subplot(141)
+            imshow(stasis)
+            title('AA')
+            
+            hold on;
 
-                subplot(142)
-                imshow(neuro)
-                title('BB');
+            subplot(142)
+            imshow(neuro)
+            title('BB');
+            
+            hold on;
 
-                subplot(143)
-                imshow(atopic)
-                title('CC')
+            subplot(143)
+            imshow(atopic)
+            title('CC')
+            
+            hold on;
 
-                subplot(144)
-                imshow(contact)
-                title('DD')
+            subplot(144)
+            imshow(contact)
+            title('DD')
+            
+            hold off;
                
                 I= input('Which image is most similar to your skin condition? (Enter the capital letters): ', 's');
                 
                 if I == 'AA'
-                    fprintf('stasis');
+                    figure(3)
                     imshow(stasis)
+                    fprintf('stasis');
                     count = 1;
                 elseif I == 'BB'
+                    figure(4)
                     fprintf('neuro');
                     imshow(neuro)
                     count = 1;
