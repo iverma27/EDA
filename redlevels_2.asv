@@ -1,0 +1,25 @@
+%function [rpix_in, rpix_out, redarea, sev] = redlevels(picname)
+img = imread('num3.jpg');
+img = img(:, :, 1);
+%roi_red = 0;
+%roi_pix = 0;
+%other_red = 0;
+%other_pix = 0;
+section = roipoly(img);
+red_vals = img(section);
+red_mean = sum(red_vals, 1) / sum(red_vals~=0, 1);
+
+%[rows, cols, colors] = size(img);
+%for i = 1:1:rows/2
+%    for j = 1:1:cols/2
+%        if BW(i, j) == 1
+%            roi_red = roi_red + img(i, j, 1);
+%            roi_pix = roi_pix + 1;
+%        else
+%            other_red = other_red + img(i, j, 1);
+%            other_pix = other_pix + 1;
+%        end
+%    end
+%end
+%imshow(labeloverlay(img, BW))         
+%end
